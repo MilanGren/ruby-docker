@@ -1,12 +1,7 @@
 
 id=$(docker ps -aqf "name=rdcon") ; echo $id
-
 docker stop $id
 docker rm $id
-
 docker rmi $(docker images 'rd' -a -q)
-
-
 docker system prune -f
-
 
