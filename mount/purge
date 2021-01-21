@@ -1,0 +1,4 @@
+
+id=$(docker ps -aqf "name=devtest") ; echo $id
+docker stop $id
+docker rm $id

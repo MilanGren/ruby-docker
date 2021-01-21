@@ -1,0 +1,42 @@
+#!/bin/bash
+
+function mntOK {
+	docker run -d \
+	  -it \
+	  --name devtest \
+	  -v "$(pwd)"/target:/mounted_space:z \
+	  nginx:latest
+}
+
+function mntTEST {
+	docker run -d \
+	  --name devtest \
+	  -v "$(pwd)"/target:/mounted_space:z \
+	  nginx:latest
+}
+
+
+
+mntTEST
+
+
+exit
+
+#
+
+docker run -dp 3000:3000 \
+    -w /app -v ${PWD}:/app \
+    node:12-alpine \
+    sh -c "yarn install && yarn run dev"
+
+exit
+
+
+
+docker run -d \
+  -it \
+  --name devtest \
+  --mount type=bind,source="$(pwd)"/target,target=/app \
+  --mount type=bind,source="$(pwd)"/target,target=/app2,readonly,bind-propagation=rslave \
+  nginx:latest
+

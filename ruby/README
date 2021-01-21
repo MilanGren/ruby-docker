@@ -1,0 +1,4 @@
+
+spustit: docker-compose up -d
+
+zatim pouze skrz docker-compose jsem schopen resit mount

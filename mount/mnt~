@@ -1,8 +1,17 @@
-docker run -d \
-  -it \
-  --name devtest \
-  -v "$(pwd)"/target:/app:z \
-  nginx:latest
+#!/bin/bash
+
+function mntOK {
+	docker run -d \
+	  -it \
+	  --name devtest \
+	  -v "$(pwd)"/target:/mounted_space:z \
+	  nginx:latest
+}
+
+
+
+mntOK
+
 
 exit
 

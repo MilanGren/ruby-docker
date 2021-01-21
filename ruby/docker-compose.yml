@@ -1,0 +1,10 @@
+version: '3'
+
+
+#https://stackoverflow.com/a/47942216
+services:
+  app:
+    build: .
+    image: rd
+    volumes:
+      - './folder:/myvol'  
