@@ -1,1 +1,5 @@
 https://takacsmark.com/docker-compose-tutorial-beginners-by-example-basics/
+
+
+
+docker-compose up -d
