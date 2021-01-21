@@ -3,7 +3,6 @@ require "bundler/setup"
 require "interpolator"
 
 t = Interpolator::Table.new 0.1 => 2, 0.4 => 3, 0.8 => 10, 1.0 => 12, 1.2 => 11, 1.4 => 8
-
 # LINEAR
 t.style = 1
 
