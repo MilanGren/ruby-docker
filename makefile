@@ -4,7 +4,11 @@ i:
 	
 r:
 #	docker run -itd --name rdcon rd
+#	docker volume create data
 	docker run rd
+
+
+
 
 
 
