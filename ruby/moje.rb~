@@ -30,8 +30,8 @@ def mysleep
 end
 
 
-testrun("/usr/src/app/bindmnt/output")
+testrun("/usr/src/app/bindmnt")
 
-testrun("/usr/src/app/app-vol/output")
+testrun("/usr/src/app/app-vol")
 
 mysleep

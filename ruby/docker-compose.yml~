@@ -8,8 +8,8 @@ services:
     image: rdimg
     container_name: rdcont
     volumes:
-      - './folder:/usr/src/app/bindmnt'
-      - app-volume:/usr/src/app/app-vol
+      - './folder:/usr/src/app/myvol'
+      - app-volume:/usr/src/app/slozka
 volumes:
   app-volume:
     external: true

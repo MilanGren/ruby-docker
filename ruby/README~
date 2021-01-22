@@ -1,6 +1,6 @@
 
-nastartovat vcetne vyroby volumes: ./start
+otocit image a spustit: docker-compose up -d --build
 
-stopnout a vycistit vcetne volumes: ./purge
+stopnout a vycistit: ./purge
 
 make i, make r nemohou fungovat kvuli sdilene slozce 'folder'.. nevim jak ji tam dostat primo pres docker .. 

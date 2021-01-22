@@ -11,6 +11,8 @@ WORKDIR /usr/src/app
 # copy all the files to the container
 COPY . .
 
+RUN mkdir slozka
+
 RUN bundle install --path vendor/bundle
 
 # run the command 
