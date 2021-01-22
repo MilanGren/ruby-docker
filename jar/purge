@@ -1,0 +1,15 @@
+
+# name of image to be removed
+IMGNAME=jarimg
+
+# name of container to be removed
+CONTNAME=jarcont
+
+# name of volume used
+VOLNAME=app-volume
+
+id=$(docker ps -aqf "name=$CONTNAME")
+docker stop $id
+docker rm $id
+docker rmi $(docker images $IMGNAME -a -q)
+docker system prune -f
