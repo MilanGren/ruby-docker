@@ -1,4 +1,6 @@
 
-spustit: docker-compose up -d
+otocit image a spustit: docker-compose up -d --build
 
-zatim pouze skrz docker-compose jsem schopen resit mount
+stopnout a vycistit: ./purge
+
+make i, make r nemohou fungovat kvuli sdilene slozce 'folder'.. nevim jak ji tam dostat primo pres docker .. 
