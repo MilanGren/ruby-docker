@@ -11,7 +11,7 @@ WORKDIR /usr/src/app
 # copy all the files to the container
 COPY . .
 
-#RUN bundle install
+RUN bundle install --path vendor/bundle
 
 # run the command 
 entrypoint ["ruby", "/usr/src/app/moje.rb"]

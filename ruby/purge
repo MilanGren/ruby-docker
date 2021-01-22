@@ -1,7 +1,13 @@
 
-id=$(docker ps -aqf "name=rdcon") ; echo $id
+# name of image to be removed
+IMGNAME=rdimg
+
+# name of container to be removed
+CONTNAME=rdcont
+
+id=$(docker ps -aqf "name=$CONTNAME")
 docker stop $id
 docker rm $id
-docker rmi $(docker images 'rd' -a -q)
+docker rmi $(docker images $IMGNAME -a -q)
 docker system prune -f
 
