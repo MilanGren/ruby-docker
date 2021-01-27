@@ -1,6 +1,6 @@
 
 
-# create image (called rd) from ./Dockerfile 
+# create image (called rdimg) from ./Dockerfile 
 i:
 	docker build -t rdimg .
 	

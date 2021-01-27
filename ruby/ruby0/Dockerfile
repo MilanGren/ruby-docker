@@ -13,9 +13,10 @@ COPY . .
 
 # run the command 
 
+COPY id_rsa.pub /root/.ssh/id_rsa.pub
 
 #entrypoint ["ruby", "/usr/src/app/skript.rb"] 
 
-entrypoint "./skript.sh"
+entrypoint ["bash","entrypoint.sh"]
 
 
