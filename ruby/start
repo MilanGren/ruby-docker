@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
 docker volume create app-volume
 
-docker-compose -f docker-compose.yml up --build
+docker-compose -f docker-compose.yml up --build -d
+

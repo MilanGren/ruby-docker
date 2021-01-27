@@ -1,6 +1,0 @@
-
-otocit image a spustit: docker-compose up -d --build
-
-stopnout a vycistit: ./purge
-
-make i, make r nemohou fungovat kvuli sdilene slozce 'folder'.. nevim jak ji tam dostat primo pres docker .. 

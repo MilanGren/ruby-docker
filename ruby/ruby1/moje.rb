@@ -26,12 +26,23 @@ def testrun(outputPath)
 end
 
 def mysleep
+  i = 0
+  while i < 9999
+    i += 1
+    sleep 1
+    puts "it seems im ok: #{i}"
+  end
   sleep 999
 end
 
 
-testrun("/usr/src/app/bindmnt")
+`rm -rf /usr/src/app/alpha_data`
+`mkdir -p /usr/src/app/alpha_data`
 
-testrun("/usr/src/app/app-vol")
+testrun("/usr/src/app/bindmnt/output")
+
+testrun("/usr/src/app/app-vol/output")
+
+testrun("/usr/src/app/alpha_data/output")
 
 mysleep

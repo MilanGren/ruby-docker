@@ -4,12 +4,26 @@ version: '3'
 # https://stackoverflow.com/a/45229934 - obecne veci ohledne pristupu
 services:
   app:
-    build: .
+    build:
+      dockerfile: ./Dockerfile
+      context: ruby1
     image: rdimg
-    container_name: rdcont
+    container_name: rdcont1
     volumes:
       - './folder:/usr/src/app/bindmnt'
+      - './alpha_data:/usr/src/app/alpha_data'
       - app-volume:/usr/src/app/app-vol
+      - app-volume:/usr/src/app/app-slozka
+      
+  prog:
+    build:
+      dockerfile: ./Dockerfile
+      context: ruby2
+    image: rdimg
+    container_name: rdcont2
+    volumes:
+      - './alpha_data:/usr/src/app/alpha_data'
+      
 volumes:
   app-volume:
     external: true

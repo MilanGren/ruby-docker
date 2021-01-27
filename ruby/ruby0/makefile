@@ -2,10 +2,10 @@
 
 # create image (called rd) from ./Dockerfile 
 i:
-	docker build -t rd .
+	docker build -t rdimg .
 	
 # run container
 r:
-	docker run rd
+	docker run --name rdcont rdimg
 
 
