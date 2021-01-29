@@ -8,7 +8,7 @@ KEY=id_rsa_milan
 
 mkdir -p /root/.ssh
 cp $KEY.pub /root/.ssh/$KEY.pub
-cat $KEY.pub > /root/.ssh/authorized_keys
+cat $KEY.pub >> /root/.ssh/authorized_keys
 chmod 0600 /root/.ssh/authorized_keys
 
 /etc/init.d/ssh restart
