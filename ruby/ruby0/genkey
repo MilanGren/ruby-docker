@@ -1,0 +1,8 @@
+
+NAME=milan
+
+ssh-keygen -t rsa -b 4096 -f ./id_rsa_$NAME
+# NOT NEEDED BUT WHO KNOWS..: ssh-copy-id -i ./id_rsa_shared remoteuser@remotehost 
+
+cp id_rsa_$NAME ~/.ssh/
+
