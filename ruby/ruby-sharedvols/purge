@@ -15,9 +15,7 @@ VOLNAME=app-volume
 docker ps --filter name=rdcont* -aq | xargs docker stop | xargs docker rm
 
 # remove image
-docker rmi $(docker images $IMGNAME -a -q)
-
-
+docker rmi $(docker images $IMGNAME* -a -q)
 
 docker system prune -f
 

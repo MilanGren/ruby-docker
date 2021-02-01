@@ -1,0 +1,8 @@
+#!/bin/bash
+
+mkdir -p folder
+mkdir -p alpha_data
+
+docker volume create app-volume
+docker-compose -f docker-compose.yml up --build -d
+

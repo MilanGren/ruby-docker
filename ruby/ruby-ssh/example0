@@ -1,9 +1,11 @@
 
+
+
 IP=`docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' rdcont`
 
 echo $IP
 
-ssh root@$IP  -i ~/.ssh/id_rsa_milan 'ls -a'
+ssh root@$IP -i ~/.ssh/id_rsa_milan 'ls -a'
 
 
 

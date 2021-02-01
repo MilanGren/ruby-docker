@@ -20,7 +20,7 @@ def testrun(outputPath)
   IO::write(outputPath,data)
 
   puts "--"
-  puts "ruby script in this docker container seems working OK "
+  puts "ruby script in this docker container seems working OK, writing testing data to #{outputPath} "
   puts "--"
 
 end
@@ -35,14 +35,10 @@ def mysleep
   sleep 999
 end
 
+testrun("/usr/src/app/bindmnt/output_rdcont1")
 
-`rm -rf /usr/src/app/alpha_data`
-`mkdir -p /usr/src/app/alpha_data`
+testrun("/usr/src/app/app-vol/output_rdcont1")
 
-testrun("/usr/src/app/bindmnt/output")
-
-testrun("/usr/src/app/app-vol/output")
-
-testrun("/usr/src/app/alpha_data/output")
+testrun("/usr/src/app/alpha_data/output_rdcont1")
 
 mysleep

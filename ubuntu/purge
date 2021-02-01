@@ -5,9 +5,15 @@ IMGNAME=ubuimg
 # name of container to be removed
 CONTNAME=ubucont
 
+# remove container
 id=$(docker ps -aqf "name=$CONTNAME")
 docker stop $id
 docker rm $id
+
+# remove image
 docker rmi $(docker images $IMGNAME -a -q)
+
+
+# clean overall
 docker system prune -f
 

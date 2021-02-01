@@ -7,7 +7,7 @@ services:
     build:
       dockerfile: ./Dockerfile
       context: ruby1
-    image: rdimg
+    image: rdimg1
     container_name: rdcont1
     volumes:
       - './folder:/usr/src/app/bindmnt'
@@ -19,7 +19,7 @@ services:
     build:
       dockerfile: ./Dockerfile
       context: ruby2
-    image: rdimg
+    image: rdimg2
     container_name: rdcont2
     volumes:
       - './alpha_data:/usr/src/app/alpha_data'

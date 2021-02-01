@@ -1,6 +1,4 @@
 
-nastartovat vcetne vyroby volumes: ./start
+ruby-sharedvols: 	pro testovani zapisovani spolecneho prostoru mezi 2 ruby kontejnerama a hostem
+ruby-ssh: 		pro testovani ssh mezi hostem a kontejnerem
 
-stopnout a vycistit vcetne volumes: ./purge
-
-make i, make r nemohou fungovat kvuli sdilene slozce 'folder'.. nevim jak ji tam dostat primo pres docker .. 
