@@ -1,0 +1,15 @@
+#!/bin/bash
+
+curl localhost:9001/actuator/health
+
+
+curl localhost:8080/hello
+
+echo
+echo
+
+curl localhost:9001/actuator | json_pp
+echo
+echo
+
+curl localhost:9001/actuator/metrics | json_pp
