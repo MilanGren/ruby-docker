@@ -12,7 +12,7 @@ VOLNAME=app-volume
 #docker stop $id
 #docker rm $id
 
-docker ps --filter name=rdcont* -aq | xargs docker stop | xargs docker rm
+docker ps --filter name=$CONTNAME* -aq | xargs docker stop | xargs docker rm
 
 # remove image
 docker rmi $(docker images $IMGNAME* -a -q)
