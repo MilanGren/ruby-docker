@@ -16,10 +16,10 @@
 	<name>actuator-service</name>
 	<description>Simple microservice providing pdf validation using VERA libs</description>
 
-	<properties>
+<!--	<properties>
 		<java.version>11</java.version>
 		<jib.base.image>nexus.isfgroup.cz:8083/openjdk_ghostscript:11-jdk-slim-20201223-151938-64d614a</jib.base.image>
-	</properties>
+	</properties>-->
 
 	<dependencies>
 		<dependency>
@@ -55,7 +55,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 
-			<plugin>
+<!--			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
 				<artifactId>jib-maven-plugin</artifactId>
 				<configuration>
@@ -65,7 +65,8 @@
 						</extraClasspath>
 					</container>
 				</configuration>
-			</plugin>
+			</plugin>-->
+
 		</plugins>
 	</build>
 
