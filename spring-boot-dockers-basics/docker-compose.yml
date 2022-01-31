@@ -1,0 +1,16 @@
+version: "2.4"
+
+services:
+    message-server:
+        container_name: mytest1
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        image: mytest1:latest
+        ports:
+            - 18888:8080
+        networks:
+            - spring-cloud-network
+networks:
+    spring-cloud-network:
+        driver: bridge

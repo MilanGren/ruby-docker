@@ -1,0 +1,4 @@
+#!/bin/bash
+
+curl --request GET http://localhost:18888/
+
