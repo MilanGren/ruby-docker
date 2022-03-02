@@ -3,13 +3,8 @@
 	1. vyrobit image: 'create-image'
 	2. spustit program: 'run-app' 
 
-pozn.: nelze provolat definovany endpoint
 
-
-
-
-
---- druha moznost (+ docker compose) --- 
+--- druha moznost (Dockerfile + docker compose) --- 
 	1. spustit: 'docker-compose up --build'
 	2. spustit './mycurl-docker', coz provola endpoint v containeru
 	

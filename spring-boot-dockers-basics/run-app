@@ -1,1 +1,1 @@
-docker run -p8887:8888 mytest0:latest
+docker run -p18888:8080 mytest0:latest
