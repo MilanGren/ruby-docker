@@ -5,22 +5,26 @@ services:
     image: alfresco/alfresco-libreoffice:latest
     mem_limit: 1248m
     environment:
-      JAVA_OPTS: " -Xms1024m -Xmx1024m"
+      JAVA_OPTS: " -Xms1024m -Xmx1024m "
+      JAVA_TOOL_OPTIONS: "-Djodconverter.enabled=false"
+      LOGGING_LEVEL_ROOT: "debug"
     ports:
       - 8092:8090      
 
-  imagemagick:
-    image: alfresco/alfresco-imagemagick:latest
-    mem_limit: 512m
-    environment:
-      JAVA_OPTS: " -Xms256m -Xmx512m"
-    ports:
-      - 8091:8090
+
+#  imagemagick:
+#    image: alfresco/alfresco-imagemagick:latest
+#    mem_limit: 512m
+#    environment:
+#      JAVA_OPTS: " -Xms256m -Xmx512m"
+#    ports:
+#      - 8091:8090
       
-  transform-core-aio:
-    image: alfresco/alfresco-transform-core-aio:2.5.6
-    mem_limit: 1536m
-    environment:
-      JAVA_OPTS: " -XX:MinRAMPercentage=50 -XX:MaxRAMPercentage=80"
-    ports:
-      - "8090:8090"
+#  transform-core-aio:
+#    image: alfresco/alfresco-transform-core-aio:2.5.6
+#    mem_limit: 1536m
+#    environment:
+#      JAVA_OPTS: " -XX:MinRAMPercentage=50 -XX:MaxRAMPercentage=80"
+#      LOGGING_LEVEL_ROOT: "debug"
+#    ports:
+#      - "8090:8090"

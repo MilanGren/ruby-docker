@@ -8,3 +8,4 @@
 	1. spustit: 'docker-compose up --build'
 	2. spustit './mycurl-docker', coz provola endpoint v containeru
 	
+        v ramci teto druhe moznosti je i pouziti environment/LOGGING_LEVEL, ktere prepisuje nastaveni application.properties/logging.level.com
