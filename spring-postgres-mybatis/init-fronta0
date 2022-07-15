@@ -1,0 +1,3 @@
+#!/bin/bash
+
+PGPASSWORD='prasopes' psql -U 'postgres' -d 'testdb' -a -f fronta0.sql
