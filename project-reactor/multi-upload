@@ -1,0 +1,3 @@
+
+curl -v --request POST -F files=@./soubor.txt -F files=@./validpdf_A-1b.pdf http://localhost:8080/async-multi-uppload2
+

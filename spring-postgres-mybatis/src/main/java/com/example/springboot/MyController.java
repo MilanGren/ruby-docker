@@ -12,7 +12,6 @@ public class MyController {
         this.program = program;
     }
 
-
     @PostMapping("/spring-postgres")
     public String springPostgres() {
         try {

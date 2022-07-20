@@ -1,0 +1,2 @@
+
+curl -v --request POST -F files=@./ASamplePDF.pdf -F files=@./validpdf_A-1b.pdf http://localhost:8080/pdfvalid 
