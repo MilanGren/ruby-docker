@@ -42,6 +42,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>28.2-jre</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.verapdf</groupId>
             <artifactId>validation-model</artifactId>
             <version>1.16.1</version>

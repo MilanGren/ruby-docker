@@ -67,7 +67,6 @@ public class UpploadController {
 
     }
 
-
     @PostMapping("multi-uppload")
     public Mono<Void> mutliUppload(@RequestPart("files") Flux<FilePart> partFlux) {
 
@@ -99,7 +98,7 @@ public class UpploadController {
 
     }
 
-    @PostMapping("/smazat")
+    @PostMapping("/analogie")
     public List<String> smazat() {
         List<String> list = List.of("1", "2", "3");
         return method(list.stream()).collect(Collectors.toList());
