@@ -1,0 +1,3 @@
+
+curl -v --request POST http://localhost:8080/database-testing
+

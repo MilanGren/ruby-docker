@@ -41,12 +41,25 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- DB -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-r2dbc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.r2dbc</groupId>
+            <artifactId>r2dbc-postgresql</artifactId>
+        </dependency>
+
+        <!-- nevim uz -->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>28.2-jre</version>
         </dependency>
 
+        <!-- VERAPDF -->
         <dependency>
             <groupId>org.verapdf</groupId>
             <artifactId>validation-model</artifactId>

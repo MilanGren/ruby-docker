@@ -10,20 +10,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
 
 @Slf4j
 @RequiredArgsConstructor
 @RestController
-public class PdfvalidController {
+public class PdfvalidControllerNew {
 
     @ExceptionHandler
     @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -55,34 +52,14 @@ public class PdfvalidController {
 
     }
 
+    @PostMapping("pdfvalidnew")
+    public Flux<Object> pdfvalid(@RequestPart("files") Flux<FilePart> partFlux) {
 
-    @PostMapping("/pdfvalid")
-    public Mono<String> pdfvalid(@RequestPart("files") List<FilePart> files) throws InterruptedException {
-        List<Disposable> disposables = new ArrayList<>();
-        files.stream().forEach(filePart_ ->
-                        disposables.add(
-                                //preproc(filePart_)
-                                Flux.just(filePart_)
-                                        .publishOn(Schedulers.boundedElastic())
-                                        .flatMap(filePart -> preproc(filePart))
-                                        .flatMap(wrapper -> isValid(wrapper))
-//                                .log()
-                                        .subscribe(resultPdfaValidation -> System.out.println(resultPdfaValidation))
-                        )
-        );
-
-        if (true) {
-            boolean allDisposed = false;
-            while (!allDisposed) {
-                if (!disposables.stream().filter(disposable -> !disposable.isDisposed()).findAny().isPresent()) {
-                    allDisposed = true;
-                    disposables.stream().forEach(disposable -> System.out.println("disposed: " + disposable.isDisposed()));
-                    System.out.println("\n--");
-                }
-            }
-        }
-
-        return Mono.just("all done");
+        return partFlux
+                .publishOn(Schedulers.boundedElastic())
+                .flatMap(filePart -> preproc(filePart))
+                .flatMap(wrapper -> isValid(wrapper));
+        //.subscribe(resultPdfaValidation -> System.out.println(resultPdfaValidation))
 
     }
 

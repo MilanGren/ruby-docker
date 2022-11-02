@@ -5,6 +5,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.verapdf.core.EncryptedPdfException;
+import org.verapdf.core.ModelParsingException;
+import org.verapdf.core.ValidationException;
+import org.verapdf.pdfa.Foundries;
+import org.verapdf.pdfa.PDFAParser;
+import org.verapdf.pdfa.PDFAValidator;
+import org.verapdf.pdfa.VeraGreenfieldFoundryProvider;
+import org.verapdf.pdfa.flavours.PDFAFlavour;
+import org.verapdf.pdfa.results.ValidationResult;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.NoSuchElementException;
 
 @Service
 public class PDFValidatorVERA {
@@ -13,7 +26,6 @@ public class PDFValidatorVERA {
 
     @Value("${max.number.of.errors:20}")
     private int maxNumberOfErrors;
-/*
 
     public PDFValidatorVERA() {
         VeraGreenfieldFoundryProvider.initialise();
@@ -46,6 +58,5 @@ public class PDFValidatorVERA {
         }
 
     }
-*/
 
 }
