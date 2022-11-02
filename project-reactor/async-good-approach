@@ -1,0 +1,5 @@
+
+curl -v --request POST http://localhost:8080/async-delay
+
+
+curl -v --request POST http://localhost:8080/async-expensive-method

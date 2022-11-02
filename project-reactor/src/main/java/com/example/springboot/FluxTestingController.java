@@ -6,14 +6,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import reactor.core.scheduler.Scheduler;
 import reactor.core.scheduler.Schedulers;
 
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
@@ -96,7 +93,11 @@ public class FluxTestingController {
         return Flux.just("zadano na zpracovani .. ");
     }
 
-    @PostMapping("/nevim2")
+    /*
+        cisla 0 .. 10 maji kazde async random delay (tzn. vsechny delays bezi soubezne), nakonec
+        se to automaticky seradi podle random delay
+    */
+    @PostMapping("/async-delay")
     public Flux<Object> nevim2() {
 
         return Flux.range(0, 10)
@@ -109,13 +110,13 @@ public class FluxTestingController {
                 });
     }
 
-    @PostMapping("/nevim")
+    @PostMapping("/async-expensive-method")
     public Flux<String> nevim() throws InterruptedException {
 
         //emptyService.print();
 
-        ExecutorService e = Executors.newSingleThreadExecutor();
-        Scheduler shared = Schedulers.fromExecutorService(e);
+/*        ExecutorService e = Executors.newSingleThreadExecutor();
+        Scheduler shared = Schedulers.fromExecutorService(e);*/
 
         List<Integer> list = new ArrayList<>();
 
@@ -161,8 +162,9 @@ public class FluxTestingController {
 
     private Integer delayAndReturnInteger(Integer integer) {
         try {
-            System.out.println(Thread.currentThread().getName() + " will sleep for 2 seconds");
-            TimeUnit.SECONDS.sleep(2);
+            int delay = Utils.getRandomNumber(0, 5);
+            System.out.println(Thread.currentThread().getName() + " | " + integer + " will sleep for " + delay + " seconds");
+            TimeUnit.SECONDS.sleep(delay);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
